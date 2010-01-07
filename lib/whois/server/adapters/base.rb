@@ -16,6 +16,7 @@
 
 require 'whois/answer/part'
 require 'whois/answer'
+require 'socket'
 
 
 module Whois
@@ -23,6 +24,7 @@ module Whois
     module Adapters
       
       class Base
+        include Socket::Constants
 
         # Default Whois request port.
         DEFAULT_WHOIS_PORT = 43
@@ -67,7 +69,7 @@ module Whois
             # @buffer = []
             # result
           end
-          
+
           # Store an answer part in <tt>@buffer</tt>.
           def append_to_buffer(response, host)
             @buffer << ::Whois::Answer::Part.new(response, host)
@@ -80,11 +82,13 @@ module Whois
         private
 
           def ask_the_socket(qstring, host, port)
-            client = TCPSocket.open(host, port)
-            client.write("#{qstring}\r\n")  # I could use put(foo) and forget the \n
-            client.read                     # but write/read is more symmetric than puts/read
+            socket = Socket.new(AF_INET, SOCK_STREAM, IPPROTO_IP)
+            sockaddr = Socket.pack_sockaddr_in(port, host)
+            socket.connect(sockaddr)
+            socket.write("#{qstring}\r\n")  # I could use put(foo) and forget the \n
+            socket.read                     # but write/read is more symmetric than puts/read
           ensure                            # and I really want to use read instead of gets.
-            client.close if client          # If != client something went wrong.
+            socket.close if socket          # If != socket something went wrong.
           end
         
       end
