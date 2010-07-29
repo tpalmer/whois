@@ -14,7 +14,7 @@
 #++
 
 
-require 'ipaddr'
+require 'ipaddress'
 
 
 module Whois
@@ -145,10 +145,10 @@ module Whois
     private
 
       def self.find_for_ip(qstring)
-        ip = IPAddr.new(qstring)
-        type = ip.ipv4? ? :ipv4 : :ipv6
+        ip = IPAddress::parse(qstring)
+        type = ip.class == IPAddress::IPv4 ? :ipv4 : :ipv6
         definitions(type).each do |definition|
-          if IPAddr.new(definition.first).include?(ip)
+          if ip.class.new(definition.first).include?(ip)
             return factory(type, *definition)
           end
         end
@@ -168,7 +168,7 @@ module Whois
       end
 
       def self.valid_ip?(addr)
-        valid_ipv4?(addr) || valid_ipv6?(addr)
+        IPAddress::valid?(addr)
       end
 
       def self.valid_ipv4?(addr)
