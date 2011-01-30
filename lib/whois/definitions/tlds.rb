@@ -114,7 +114,7 @@ Whois::Server.define :tld, ".ec", "whois.nic.ec"
 Whois::Server.define :tld, ".ee", "whois.tld.ee"
 Whois::Server.define :tld, ".eg", nil, {:web=>"http://lookup.egregistry.eg/english.aspx", :adapter=>Whois::Server::Adapters::Web}
 Whois::Server.define :tld, ".er", nil, {:adapter=>Whois::Server::Adapters::None}
-Whois::Server.define :tld, ".es", nil, {:web=>"https://www.nic.es/", :adapter=>Whois::Server::Adapters::Web}
+Whois::Server.define :tld, ".es", "whois.nic.es"
 Whois::Server.define :tld, ".et", nil, {:adapter=>Whois::Server::Adapters::None}
 Whois::Server.define :tld, ".eu", "whois.eu"
 Whois::Server.define :tld, ".fi", "whois.ficora.fi"
