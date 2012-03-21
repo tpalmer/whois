@@ -1,0 +1,37 @@
+swhoisd 3.0.5
+BENIN .BJ
+Searching for gouv.bj.  Found 2 record(s) matching gouv.bj.
+
+Domain:                   (Handle GOUV)
+Name:                     GOUVERNEMENT
+Domain Name:              gouv.bj
+Name Server 1:            ben02.gouv.bj
+NS1 IP address:           81.91.232.1
+Name Server 2:            rip.psg.com
+Name Server 3:            ns1.intnet.bj
+NS3 IP address:           81.91.225.18
+Name Server 4:            nakayo.leland.bj
+NS4 IP address:           81.91.225.1
+Country:                  BJ
+Administrative Contact:   AGBAHOLOU
+Technical Contact:        DOSFRK
+Created:                  Sat Jun 23 01:57:22 PDT 1996
+Last Updated:             Sat Jun 23 01:57:22 PDT 2004
+
+Domain:                   (Handle GOUV)
+Name:                     gouv
+Domain Name:              gouv.bj.
+Name Server 1:            ns1.intnet.bj
+NS1 IP address:           81.91.225.18
+Name Server 2:            ben02.gouv.bj.
+NS2 IP address:           81.91.232.129
+Name Server 3:            rip.psg.com.
+NS3 IP address:           81.91.232.1
+Country:                  BJ
+Administrative Contact:   AGBAHOLOU	
+Technical Contact:        GDM
+Created:                  Thu Jan 03 01:57:22 PDT 2008
+Last Updated:             Thu Jan 03 01:57:22 PDT 2008
+
+To single out one record, look it up with "!XXX", where XXX is the handle.
+
