@@ -1,0 +1,97 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2004-03-18 14:05:56 UTC")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-06-07 16:37:30 UTC")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2017-03-04 00:00:00 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Moniker"
+  should: %s.organization == "Moniker Online Services LLC"
+  should: %s.url          == "http://moniker.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == "3793977"
+  should: %s[0].name         == "Domain Manager"
+  should: %s[0].organization == "Moniker Online Services, LLC"
+  should: %s[0].address      == "20 SW 27th Ave.\nSuite 201"
+  should: %s[0].city         == "Pompano Beach"
+  should: %s[0].zip          == "33069"
+  should: %s[0].state        == "FL"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "domains@moniker.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == "3793977"
+  should: %s[0].name         == "Domain Manager"
+  should: %s[0].organization == "Moniker Online Services, LLC"
+  should: %s[0].address      == "20 SW 27th Ave.\nSuite 201"
+  should: %s[0].city         == "Pompano Beach"
+  should: %s[0].zip          == "33069"
+  should: %s[0].state        == "FL"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.9549848445"
+  should: %s[0].fax          == "+1.9549699155"
+  should: %s[0].email        == "domains@moniker.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == "3793977"
+  should: %s[0].name         == "Domain Manager"
+  should: %s[0].organization == "Moniker Online Services, LLC"
+  should: %s[0].address      == "20 SW 27th Ave.\nSuite 201"
+  should: %s[0].city         == "Pompano Beach"
+  should: %s[0].zip          == "33069"
+  should: %s[0].state        == "FL"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.9549848445"
+  should: %s[0].fax          == "+1.9549699155"
+  should: %s[0].email        == "domains@moniker.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.moniker.com"
+  should: %s[0].ipv4 == "207.189.109.115"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.moniker.com"
+  should: %s[1].ipv4 == "63.156.206.115"
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.moniker.com"
+  should: %s[2].ipv4 == "50.57.11.89"
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.moniker.com"
+  should: %s[3].ipv4 == "50.57.11.88"
