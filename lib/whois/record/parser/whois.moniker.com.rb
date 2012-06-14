@@ -18,6 +18,9 @@ module Whois
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
+      #
+      # @author Justin Campbell <justin@cramerdev.com>
+      #
       class WhoisMonikerCom < Base
         property_supported :status do
           content_for_scanner =~ /No Match/ ? :available : :registered
