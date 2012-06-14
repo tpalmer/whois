@@ -108,8 +108,9 @@ module Whois
           #     Tucows.com Co., tucowsdomains@tucows.com
           #     416-535-0123
 
-          contact = content_for_scanner.match(/#{element}\:\n((\s+.*){4,5})/)[1]
-
+          content_match = content_for_scanner.match(/#{element}\:\n((\s+.*){4,5})/)
+          return unless content_match
+          contact = content_match[1]
           return unless contact
 
           contact = contact.lines.map(&:strip).join("\n")

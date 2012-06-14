@@ -83,7 +83,9 @@ module Whois
         private
 
         def build_contact(element, type)
-          id, contact = content_for_scanner.match(/#{element}\s+\[(\d+)\]\:\n((.+\n){7,10})/).captures
+          content_match = content_for_scanner.match(/#{element}\s+\[(\d+)\]\:\n((.+\n){7,10})/)
+          return unless content_match
+          id, contact = content_match.captures
           return unless contact
 
           # 0 Domain Manager domains@moniker.com
