@@ -103,7 +103,7 @@ module Whois
 
           match = contact.match(/
             (?<name>.+)\s(?<email>.+@.+)\n
-            (?<organization>.+)\n
+            ((?<organization>.+)\n)?
             (?<address>(.|\n)+)\n
             (?<city>.+)\n
             (?<state>.+)\n
