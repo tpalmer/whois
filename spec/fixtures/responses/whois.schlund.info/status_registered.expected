@@ -1,0 +1,97 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1997-09-28")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-09-28")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-09-27")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "1&1"
+  should: %s.organization == "1&1 Internet AG"
+  should: %s.url          == "http://registrar.1und1.info"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Andreas Gauger"
+  should: %s[0].organization == "1&1 Internet Inc."
+  should: %s[0].address      == "701 Lee Rd.\nSuite 300"
+  should: %s[0].city         == "Chesterbrook"
+  should: %s[0].state        == "PA"
+  should: %s[0].zip          == "19087"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.8774612631"
+  should: %s[0].fax          == "+1.6105601501"
+  should: %s[0].email        == "hostmaster@oneandone.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Andreas Gauger"
+  should: %s[0].organization == "1&1 Internet Inc."
+  should: %s[0].address      == "701 Lee Rd.\nSuite 300"
+  should: %s[0].city         == "Chesterbrook"
+  should: %s[0].state        == "PA"
+  should: %s[0].zip          == "19087"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.8774612631"
+  should: %s[0].fax          == "+1.6105601501"
+  should: %s[0].email        == "hostmaster@oneandone.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Andreas Gauger"
+  should: %s[0].organization == "1&1 Internet Inc."
+  should: %s[0].address      == "701 Lee Rd.\nSuite 300"
+  should: %s[0].city         == "Chesterbrook"
+  should: %s[0].state        == "PA"
+  should: %s[0].zip          == "19087"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.8774612631"
+  should: %s[0].fax          == "+1.6105601501"
+  should: %s[0].email        == "hostmaster@oneandone.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns-1and1.ui-dns.com"
+  should: %s[0].ipv4 == "217.160.82.200"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns-1and1.ui-dns.org"
+  should: %s[1].ipv4 == nil
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns-1and1.ui-dns.de"
+  should: %s[2].ipv4 == nil
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns-1and1.ui-dns.biz"
+  should: %s[3].ipv4 == nil
