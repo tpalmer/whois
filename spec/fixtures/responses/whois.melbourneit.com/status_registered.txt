@@ -1,0 +1,38 @@
+
+Domain Name.......... melbourneit.com
+  Creation Date........ 1999-04-05
+  Registration Date.... 2000-05-23
+  Expiry Date.......... 2021-04-05
+  Organisation Name.... Melbourne IT Ltd
+  Organisation Address. Level 2, 120 King Street
+  Organisation Address.
+  Organisation Address. Melbourne
+  Organisation Address. 3000
+  Organisation Address. Vic
+  Organisation Address. AUSTRALIA
+
+Admin Name........... Account Manager
+  Admin Address........ Level 2, 120 King Street
+  Admin Address........
+  Admin Address........ Melbourne
+  Admin Address........ 3000
+  Admin Address........ Vic
+  Admin Address........ AUSTRALIA
+  Admin Email.......... cdm@melbourneit.com.au
+  Admin Phone.......... +61.386242300
+  Admin Fax............
+
+Tech Name............ Account Manager
+  Tech Address......... Level 2, 120 King Street
+  Tech Address.........
+  Tech Address......... Melbourne
+  Tech Address......... 3000
+  Tech Address......... Vic
+  Tech Address......... AUSTRALIA
+  Tech Email........... cdm@melbourneit.com.au
+  Tech Phone........... +61.386242300
+  Tech Fax.............
+  Name Server.......... ns1.melbourneit.com.au
+  Name Server.......... ns2.melbourneit.com.au
+
+
