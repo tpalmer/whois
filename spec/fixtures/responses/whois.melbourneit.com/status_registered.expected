@@ -1,0 +1,91 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1999-04-05")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2000-05-23")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2021-04-05")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Melbourne IT"
+  should: %s.organization == "Melbourne IT Ltd"
+  should: %s.url          == "http://melbourneit.com.au"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Melbourne IT Ltd"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Level 2, 120 King Street"
+  should: %s[0].city         == "Melbourne"
+  should: %s[0].zip          == "3000"
+  should: %s[0].state        == "Vic"
+  should: %s[0].country      == "AUSTRALIA"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == nil
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Account Manager"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Level 2, 120 King Street"
+  should: %s[0].city         == "Melbourne"
+  should: %s[0].zip          == "3000"
+  should: %s[0].state        == "Vic"
+  should: %s[0].country      == "AUSTRALIA"
+  should: %s[0].phone        == "+61.386242300"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "cdm@melbourneit.com.au"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == nil
+  should: %s[0].name         == "Account Manager"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "Level 2, 120 King Street"
+  should: %s[0].city         == "Melbourne"
+  should: %s[0].zip          == "3000"
+  should: %s[0].state        == "Vic"
+  should: %s[0].country      == "AUSTRALIA"
+  should: %s[0].phone        == "+61.386242300"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "cdm@melbourneit.com.au"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.melbourneit.com.au"
+  should: %s[0].ipv4 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.melbourneit.com.au"
+  should: %s[1].ipv4 == nil
