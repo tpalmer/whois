@@ -80,7 +80,7 @@ module Whois
           address_match = content_for_scanner.match /(\s{2}#{element}\sAddress\.+(\s.+)?\n)+/
           return unless address_match 
 
-          attribute_names = %w[address address city zip state country].map(&:to_sym)
+          attribute_names = %w[address address address city zip state country].map(&:to_sym)
 
           address_match[0].lines.each_with_index do |line, index|
             attribute = attribute_names[index]
