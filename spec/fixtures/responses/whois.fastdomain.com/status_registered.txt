@@ -1,0 +1,74 @@
+The data in the FastDomain Inc. WHOIS database is provided
+to you by FastDomain Inc. for information purposes only,
+that is, to assist you in obtaining information about or related to
+a domain name registration record. FastDomain Inc. makes
+this information available "as is," and does not guarantee its
+accuracy.  By submitting a WHOIS query, you  agree that you will use
+this data only for lawful purposes and that, under no circumstances
+will you use this data to: (1) allow, enable, or otherwise support
+the transmission of mass unsolicited, commercial advertising or
+solicitations via direct mail, electronic mail, or by telephone; or
+(2) enable high volume, automated, electronic processes that apply
+to FastDomain Inc. (or its systems). The compilation,
+repackaging, dissemination or other use of this data is expressly
+prohibited without the prior written consent of
+FastDomain Inc.. FastDomain Inc. reserves the
+right to modify these terms at any time.  By submitting this query,
+you agree to abide by these terms.
+
+=-=-=-=
+
+Registrar: FastDomain Inc.
+Provider Name....: FastDomain Inc.
+Provider Whois...: whois.fastdomain.com
+Provider Homepage: http://www.fastdomain.com/
+
+Domain Name: FASTDOMAIN.COM
+
+   Created on..............: 2002-11-07 05:49:33 GMT
+   Expires on..............: 2017-11-07 05:49:33 GMT
+   Last modified on........: 2012-04-19 17:40:46 GMT
+
+Registrant Info: (FAST-18447012)
+
+   Domain Privacy Service
+   1958 South 950 East
+   Provo, Utah -
+   United States
+   Phone: +1.8014948462
+   Fax..:
+   Email: whois@fastdomain.com
+   Last modified: 2012-06-11 20:32:05 GMT
+
+Administrative Info: (FAST-18447012)
+
+   Domain Privacy Service
+   1958 South 950 East
+   Provo, Utah -
+   United States
+   Phone: +1.8014948462
+   Fax..:
+   Email: whois@fastdomain.com
+   Last modified: 2012-06-11 20:32:05 GMT
+
+Technical Info: (FAST-18447012)
+
+   Domain Privacy Service
+   1958 South 950 East
+   Provo, Utah -
+   United States
+   Phone: +1.8014948462
+   Fax..:
+   Email: whois@fastdomain.com
+   Last modified: 2012-06-11 20:32:05 GMT
+
+Status: Active
+
+Domain servers in listed order:
+
+   NS1.FASTDOMAIN.COM
+   NS2.FASTDOMAIN.COM
+   =-=-=-=
+
+Now UNLIMITED Storage and UNLIMITED Bandwidth and Host UNLIMITED Domains on one account for ONLY $6.95 per month.
+You also get a *FREE* DOMAIN REGISTRATION for one year when you host with http://www.fastdomain.com/
