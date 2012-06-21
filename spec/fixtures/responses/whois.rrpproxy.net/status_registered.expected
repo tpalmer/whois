@@ -1,0 +1,94 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#updated_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#expires_on
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "domaindiscount24.com"
+  should: %s.organization == "Key-Systems GmbH"
+  should: %s.url          == "http://www.domaindiscount24.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == "P-ASS1861"
+  should: %s[0].name         == "Alexander Siffrin"
+  should: %s[0].organization == "Key-Systems GmbH"
+  should: %s[0].address      == "Im Oberen Werk 1"
+  should: %s[0].city         == "St. Ingbert"
+  should: %s[0].state        == nil
+  should: %s[0].zip          == "66386"
+  should: %s[0].country_code == "DE"
+  should: %s[0].phone        == "+49 6894 9396850"
+  should: %s[0].fax          == "+49 6894 9396851"
+  should: %s[0].email        == "billing@key-systems.net"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == "P-ASS1861"
+  should: %s[0].name         == "Alexander Siffrin"
+  should: %s[0].organization == "Key-Systems GmbH"
+  should: %s[0].address      == "Im Oberen Werk 1"
+  should: %s[0].city         == "St. Ingbert"
+  should: %s[0].state        == nil
+  should: %s[0].zip          == "66386"
+  should: %s[0].country_code == "DE"
+  should: %s[0].phone        == "+49 6894 9396850"
+  should: %s[0].fax          == "+49 6894 9396851"
+  should: %s[0].email        == "billing@key-systems.net"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == "P-ASS1861"
+  should: %s[0].name         == "Alexander Siffrin"
+  should: %s[0].organization == "Key-Systems GmbH"
+  should: %s[0].address      == "Im Oberen Werk 1"
+  should: %s[0].city         == "St. Ingbert"
+  should: %s[0].state        == nil
+  should: %s[0].zip          == "66386"
+  should: %s[0].country_code == "DE"
+  should: %s[0].phone        == "+49 6894 9396850"
+  should: %s[0].fax          == "+49 6894 9396851"
+  should: %s[0].email        == "billing@key-systems.net"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.p20.dynect.net"
+  should: %s[0].ipv4 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.p20.dynect.net"
+  should: %s[1].ipv4 == nil
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "ns3.p20.dynect.net"
+  should: %s[2].ipv4 == nil
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "ns4.p20.dynect.net"
+  should: %s[3].ipv4 == nil
