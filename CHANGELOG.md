@@ -2,7 +2,22 @@
 
 ## master
 
+* NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
+
+* CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
+
+
+## Release 2.6.3
+
+* NEW: whois.registrypro.pro is now a full parser.
+
 * FIXED: In some cases the parser class is not correctly detected from hostname (GH-173). [Thanks @JustinCampbell]
+
+* FIXED: whois.ua parser raises ArgumentError when the created_on object invalid data.
+
+* FIXED: Whois::Server may occasionally raise an error trying to resolve an IPv6 matching query object (GH-174). [Thanks @aeden].
+
+* CHANGED: Updated whois.registrypro.pro parser to the new response format.
 
 
 ## Release 2.6.2
@@ -1372,7 +1387,7 @@ WARNING: Whois >= 1.5.0 requires Ruby 1.8.7 or newer.
 
 * FIXED: ./bin/ruby-whois uses the Gem instead of current version (closes REDMINE-344)
 
-* FIXED: Whois::Client doesn't cast qstring to_s (closes REDMINE-339)
+* FIXED: Whois::Client doesn't cast query to_s (closes REDMINE-339)
 
 * FIXED: Whois::Parser doesn't detect preloaded parsers. Improved performances skipping unnecessary 'require'. (closes REDMINE-340)
 

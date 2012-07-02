@@ -120,7 +120,7 @@ module Whois
     #   # Define a new server with a custom adapter and options
     #   Whois::Server.define :tld, ".ar", nil,
     #     :adapter => Whois::Server::Adapters::Web,
-    #     :web => "http://www.nic.ar/"
+    #     :url => "http://www.nic.ar/"
     #
     def self.define(type, allocation, host, options = {})
       @@definitions[type] ||= []
@@ -164,7 +164,9 @@ module Whois
     #
     def self.factory(type, allocation, host, options = {})
       options = options.dup
-      (options.delete(:adapter) || Adapters::Standard).new(type, allocation, host, options)
+      adapter = options.delete(:adapter) || Adapters::Standard
+      adapter = Adapters.const_get(camelize(adapter)) unless adapter.respond_to?(:new)
+      adapter.new(type, allocation, host, options)
     end
 
 
@@ -225,6 +227,11 @@ module Whois
 
   private
 
+    def self.camelize(string)
+      string.to_s.split("_").collect(&:capitalize).join
+    end
+
+
     def self.matches_tld?(string)
       string =~ /^\.(xn--)?[a-z0-9]+$/
     end
@@ -239,12 +246,16 @@ module Whois
 
 
     def self.find_for_ip(string)
-      ip = IPAddr.new(string)
-      type = ip.ipv4? ? :ipv4 : :ipv6
-      definitions(type).each do |definition|
-        if IPAddr.new(definition.first).include?(ip)
-          return factory(type, *definition)
+      begin
+        ip = IPAddr.new(string)
+        type = ip.ipv4? ? :ipv4 : :ipv6
+        definitions(type).each do |definition|
+          if IPAddr.new(definition.first).include?(ip)
+            return factory(type, *definition)
+          end
         end
+      rescue ArgumentError => error
+        # continue
       end
       raise AllocationUnknown, "IP Allocation for `#{string}' unknown. Server definitions might be outdated."
     end
