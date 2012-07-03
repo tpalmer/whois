@@ -90,7 +90,6 @@ module Whois
 
           return unless match
 
-          #attributes = { :type => type, :id => id }
           attributes = { :type => type }
 
           match.names.each do |name|
