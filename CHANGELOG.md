@@ -2,9 +2,31 @@
 
 ## master
 
+* SERVER: Added .CW TLD server.
+
+* SERVER: Updated .GR, .ORG (GH-176), .FO (GH-177) TLD server.
+
+* SERVER: Added .XN--MGBA3A4F16A (ایران., Iran) IDN TLD server.
+
 * NEW: Ability to specify a custom :adapter passing a Symbol instead of an instance of Class.
 
+* NEW: Added full whois.nic.fo parser (GH-177).
+
+* NEW: whois.nic.cz is now a full parser.
+
+* NEW: whois.tld.ee is now a full parser.
+
+* NEW: whois.tznic.or.tz is now a full parser.
+
+* FIXED: whois.neworksolutions.com parser crashes when the contact name is blank.
+
 * CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
+
+* CHANGE: Removed Pir adaper, the registry is a thick whois server.
+
+* CHANGE: Changed whois.publicinterestregistry.com to whois.pir.org (GH-176).
+
+* CHANGE: whois.tcinet.ru parser learned how to parse contact URLs (GH-150).
 
 
 ## Release 2.6.3
