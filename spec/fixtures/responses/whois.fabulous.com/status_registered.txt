@@ -1,0 +1,29 @@
+
+
+Domain fabulous.com:
+  Fabulous.com Pty Ltd
+  P O Box 757
+  Fortitude Valley, QLD 4006 AU
+
+Administrative contact:
+Technical contact:
+Billing contact:
+  Fabulous.com Pty Ltd
+  Domain Hostmaster
+  domain_hostmaster@darkbluesea.com
+  P O Box 757
+  Fortitude Valley, QLD 4006 AU
+  Phone: +617.30070070
+  Fax:
+
+Record dates:
+  Record created on: 1997-03-16 05:00:00 UTC
+  Record modified on: 2010-04-13 00:59:49 UTC
+  Record expires on: 2016-12-07 UTC
+
+Nameservers:
+  ns2.darkbluesea.com
+  ns1.darkbluesea.com
+
+Note: Automated collection of data from this database is strictly prohibited.
+
