@@ -1,0 +1,97 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1995-01-03 05:00:00")
+
+#updated_on
+  should: %s == nil
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2019-11-04 00:00:00")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Name.com"
+  should: %s.organization == "Name.com LLC"
+  should: %s.url          == "http://www.name.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == nil
+  should: %s[0].name         == "DNS Admin"
+  should: %s[0].organization == "Name.com LLC"
+  should: %s[0].address      == "2500 East Second Avenue\nSecond Floor"
+  should: %s[0].city         == "Denver"
+  should: %s[0].state        == "CO"
+  should: %s[0].zip          == "80206"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.7202492374"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "dns@name.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id           == nil
+  should: %s[0].name         == "DNS Admin"
+  should: %s[0].organization == "Name.com LLC"
+  should: %s[0].address      == "2500 East Second Avenue\nSecond Floor"
+  should: %s[0].city         == "Denver"
+  should: %s[0].state        == "CO"
+  should: %s[0].zip          == "80206"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.7202492374"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "dns@name.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id           == nil
+  should: %s[0].name         == "DNS Admin"
+  should: %s[0].organization == "Name.com LLC"
+  should: %s[0].address      == "2500 East Second Avenue\nSecond Floor"
+  should: %s[0].city         == "Denver"
+  should: %s[0].state        == "CO"
+  should: %s[0].zip          == "80206"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.7202492374"
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "dns@name.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(4)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.name.com"
+  should: %s[0].ipv4 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns3.name.com"
+  should: %s[1].ipv4 == nil
+  should: %s[2] CLASS(nameserver)
+  should: %s[2].name == "dns01.name.com"
+  should: %s[2].ipv4 == nil
+  should: %s[3] CLASS(nameserver)
+  should: %s[3].name == "dns02.name.com"
+  should: %s[3].ipv4 == nil
+
