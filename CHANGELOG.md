@@ -20,13 +20,17 @@
 
 * FIXED: whois.neworksolutions.com parser crashes when the contact name is blank.
 
-* CHANGE: Deprecated options[:web] for :web adapter in favor of options[:url].
+* FIXED: whois.rnids.rs parser should support statuses Locked, Expired, and In Transfer.
 
-* CHANGE: Removed Pir adaper, the registry is a thick whois server.
+* CHANGED: Deprecated options[:web] for :web adapter in favor of options[:url].
 
-* CHANGE: Changed whois.publicinterestregistry.com to whois.pir.org (GH-176).
+* CHANGED: Removed Pir adaper, the registry is a thick whois server.
 
-* CHANGE: whois.tcinet.ru parser learned how to parse contact URLs (GH-150).
+* CHANGED: Changed whois.publicinterestregistry.com to whois.pir.org (GH-176).
+
+* CHANGED: whois.tcinet.ru parser learned how to parse contact URLs (GH-150).
+
+* CHANGED: Removed support for .gemtest and removed /spec folder from the packaged gem.
 
 
 ## Release 2.6.3
