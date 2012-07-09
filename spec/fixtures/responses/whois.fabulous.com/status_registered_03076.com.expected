@@ -1,0 +1,64 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2008-10-17 19:39:15 UTC")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-09-28 14:14:49 UTC")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-10-17 UTC")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Fabulous.com"
+  should: %s.organization == "Fabulous.com Pty Ltd"
+  should: %s.url          == "http://www.fabulous.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id           == "59314360577865"
+  should: %s[0].name         == "Domain Hostmaster"
+  should: %s[0].organization == "Whois Privacy Services Pty Ltd"
+  should: %s[0].address      == "PO Box 923"
+  should: %s[0].city         == "Fortitude Valley"
+  should: %s[0].state        == "QLD"
+  should: %s[0].zip          == "4006"
+  should: %s[0].country_code == "AU"
+  should: %s[0].phone        == nil
+  should: %s[0].fax          == nil
+  should: %s[0].email        == "59314360577865-ba6f51@whoisprivacyservices.com.au"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(0)
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(0)
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "ns1.fabulous.com"
+  should: %s[0].ipv4 == nil
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "ns2.fabulous.com"
+  should: %s[1].ipv4 == nil
