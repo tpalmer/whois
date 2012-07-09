@@ -1,0 +1,41 @@
+
+Domain Name.......... inww.com
+  Creation Date........ 1998-04-16
+  Registration Date.... 2000-03-30
+  Expiry Date.......... 2012-11-18
+  Organisation Name.... Melbourne IT Ltd
+  Organisation Address. Level 2, 120 King Street
+  Organisation Address.
+  Organisation Address.
+  Organisation Address. Melbourne
+  Organisation Address. 3000
+  Organisation Address. Vic
+  Organisation Address. AUSTRALIA
+
+Admin Name........... Account Manager
+  Admin Address........ Level 2, 120 King Street
+  Admin Address........
+  Admin Address........
+  Admin Address. Melbourne
+  Admin Address........ 3000
+  Admin Address........ Vic
+  Admin Address........ AUSTRALIA
+  Admin Email.......... cdm@melbourneit.com
+  Admin Phone.......... +61.386242465
+  Admin Fax............
+
+Tech Name............ Account Manager
+  Tech Address......... Level 2, 120 King Street
+  Tech Address.........
+  Tech Address.........
+  Tech Address......... Melbourne
+  Tech Address......... 3000
+  Tech Address......... Vic
+  Tech Address......... AUSTRALIA
+  Tech Email........... cdm@melbourneit.com
+  Tech Phone........... +61.386242465
+  Tech Fax.............
+  Name Server.......... ns1.melbourneit.com
+  Name Server.......... ns2.melbourneit.com
+
+
