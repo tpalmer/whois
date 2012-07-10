@@ -1,0 +1,58 @@
+GMO Internet, Inc. whois server 2.0
+
+This server only serves information on GMO Internet,Inc.-maintained domain names
+For more information, please contact hostmaster@gmo.jp.
+
+Domain Handle: 2564
+Domain Name: onamae.com
+Created On: 1999-12-17 15:37:03.0
+Last Updated On: 2011-12-17 00:15:28.0
+Expiration Date: 2012-12-17 06:37:02.0
+Status: ACTIVE
+Registrant Name: GMO Internet, Inc.
+Registrant Organization: GMO Internet, Inc.
+Registrant Street1: 26-1 Sakuragaoka - Cerulean Tower
+Registrant Street2:
+Registrant City: Shibuya-ku
+Registrant State: Tokyo
+Registrant Postal Code: 150-8512
+Registrant Country: JP
+Registrant Phone: 0354562555
+Registrant Fax:
+Registrant Email: admin@onamae.com
+Admin Name: GMO Internet, Inc.
+Admin Organization: GMO Internet, Inc.
+Admin Street1: Cerulean Tower
+Admin Street2: 26-1 Sakuragaoka-cho
+Admin City: Shibuya-ku
+Admin State: Tokyo
+Admin Postal Code: 150-8512
+Admin Country: JP
+Admin Phone: 03-5456-2555
+Admin Fax: 03-5456-2556
+Admin Email: admin@onamae.com
+Billing Name: GMO Internet, Inc.
+Billing Organization: GMO Internet, Inc.
+Billing Street1: Cerulean Tower
+Billing Street2: 26-1 Sakuragaoka-cho
+Billing City: Shibuya-ku
+Billing State: Tokyo
+Billing Postal Code: 150-8512
+Billing Country: JP
+Billing Phone: 03-5456-2555
+Billing Fax: 03-5456-2556
+Billing Email: admin@onamae.com
+Tech Name: GMO Internet, Inc.
+Tech Organization: GMO Internet, Inc.
+Tech Street1: Cerulean Tower
+Tech Street2: 26-1 Sakuragaoka-cho
+Tech City: Shibuya-ku
+Tech State: Tokyo
+Tech Postal Code: 150-8512
+Tech Country: JP
+Tech Phone: 03-5456-2555
+Tech Fax: 03-5456-2556
+Tech Email: admin@onamae.com
+Name Server: dns.interq.or.jp
+Name Server: dns1.interq.or.jp
+
