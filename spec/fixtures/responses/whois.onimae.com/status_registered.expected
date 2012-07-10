@@ -1,0 +1,90 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("1999-12-17 15:37:03.0")
+
+#updated_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2011-12-17 00:15:28.0")
+
+#expires_on
+  should: %s CLASS(time)
+  should: %s == Time.parse("2012-12-17 06:37:02.0")
+
+
+#registrar
+  should: %s CLASS(registrar)
+  should: %s.id           == nil
+  should: %s.name         == "GMO Internet"
+  should: %s.organization == "GMO Internet, Inc."
+  should: %s.url          == "http://onimae.com"
+
+#registrant_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].id            == nil
+  should: %s[0].name          == "GMO Internet, Inc."
+  should: %s[0].organization  == "GMO Internet, Inc."
+  should: %s[0].address       == "26-1 Sakuragaoka - Cerulean Tower"
+  should: %s[0].city          == "Shibuya-ku"
+  should: %s[0].zip           == "150-8512"
+  should: %s[0].state         == "Tokyo"
+  should: %s[0].country_code  == "JP"
+  should: %s[0].phone         == "0354562555"
+  should: %s[0].fax           == nil
+  should: %s[0].email         == "admin@onamae.com"
+
+#admin_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].id            == nil
+  should: %s[0].name          == "GMO Internet, Inc."
+  should: %s[0].organization  == "GMO Internet, Inc."
+  should: %s[0].address       == "Cerulean Tower\n26-1 Sakuragaoka-cho"
+  should: %s[0].city          == "Shibuya-ku"
+  should: %s[0].zip           == "150-8512"
+  should: %s[0].state         == "Tokyo"
+  should: %s[0].country_code  == "JP"
+  should: %s[0].phone         == "03-5456-2555"
+  should: %s[0].fax           == "03-5456-2556"
+  should: %s[0].email         == "admin@onamae.com"
+
+#technical_contacts
+  should: %s CLASS(array)
+  should: %s SIZE(1)
+  should: %s[0] CLASS(contact)
+  should: %s[0].type          == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].id            == nil
+  should: %s[0].name          == "GMO Internet, Inc."
+  should: %s[0].organization  == "GMO Internet, Inc."
+  should: %s[0].address       == "Cerulean Tower\n26-1 Sakuragaoka-cho"
+  should: %s[0].city          == "Shibuya-ku"
+  should: %s[0].zip           == "150-8512"
+  should: %s[0].state         == "Tokyo"
+  should: %s[0].country_code  == "JP"
+  should: %s[0].phone         == "03-5456-2555"
+  should: %s[0].fax           == "03-5456-2556"
+  should: %s[0].email         == "admin@onamae.com"
+
+
+#nameservers
+  should: %s CLASS(array)
+  should: %s SIZE(2)
+  should: %s[0] CLASS(nameserver)
+  should: %s[0].name == "dns.interq.or.jp"
+  should: %s[1] CLASS(nameserver)
+  should: %s[1].name == "dns1.interq.or.jp"
+
