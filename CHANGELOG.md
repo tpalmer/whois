@@ -2,6 +2,11 @@
 
 ## master
 
+* NEW: Added full whois.register.com parser.
+
+
+## Release 2.6.4
+
 * SERVER: Added .CW TLD server.
 
 * SERVER: Updated .GR, .ORG (GH-176), .FO (GH-177) TLD server.
@@ -21,6 +26,8 @@
 * FIXED: whois.neworksolutions.com parser crashes when the contact name is blank.
 
 * FIXED: whois.rnids.rs parser should support statuses Locked, Expired, and In Transfer.
+
+* FIXED: whois.nic.gs parser should support status `Excluded - Pending Delete - Restorable` (GH-180). [Thanks @smith]
 
 * CHANGED: Deprecated options[:web] for :web adapter in favor of options[:url].
 
