@@ -114,6 +114,8 @@ module Whois
             end
           end
 
+          attributes.delete_if { |key, value| !Record::Contact.members.include?(key) }
+
           Record::Contact.new attributes
         end
       end
