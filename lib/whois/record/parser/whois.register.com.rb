@@ -70,7 +70,7 @@ module Whois
 
         property_supported :nameservers do
           if content_for_scanner =~ /(?:DNS|Name) Servers:\n((.+\n)+)\n/
-            $1.split("\n").map do |line|
+            $1.split("\n").take_while {|x| !x.strip.empty? }.map do |line|
               Record::Nameserver.new(:name => line.strip)
             end
           end
@@ -95,7 +95,7 @@ module Whois
 
           # 0 Register.Com, Inc.
           # 1 Domain Registrar
-          # 2 575 8th Avenue 
+          # 2 575 8th Avenue
           # 3 New York, NY 10018
           # 4 US
           # 5 Phone: +1.9027492701
@@ -124,7 +124,7 @@ module Whois
           # 0 AdBrite, Inc.
           # 1 Host Master (hostmaster@adbrite.com)
           # 2 4159750916
-          # 3 Fax: 
+          # 3 Fax:
           # 4 731 Market Street, Suite 500
           # 5 San Francisco, CA 94103
           # 6 US
