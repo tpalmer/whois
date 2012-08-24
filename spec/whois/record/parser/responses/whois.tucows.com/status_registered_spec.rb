@@ -23,7 +23,7 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
 
   describe "#status" do
     it do
-      @parser.status.should == :registered
+      lambda { @parser.status }.should raise_error(Whois::PropertyNotSupported)
     end
   end
   describe "#available?" do
@@ -39,28 +39,27 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
   describe "#created_on" do
     it do
       @parser.created_on.should be_a(Time)
-      @parser.created_on.should == Time.parse("1995-09-07")
+      @parser.created_on.should == Time.parse("2006-03-06")
     end
   end
   describe "#updated_on" do
     it do
       @parser.updated_on.should be_a(Time)
-      @parser.updated_on.should == Time.parse("2011-08-07")
+      @parser.updated_on.should == Time.parse("2012-03-19")
     end
   end
   describe "#expires_on" do
     it do
       @parser.expires_on.should be_a(Time)
-      @parser.expires_on.should == Time.parse("2012-09-06")
+      @parser.expires_on.should == Time.parse("2013-03-06")
     end
   end
   describe "#registrar" do
     it do
       @parser.registrar.should be_a(Whois::Record::Registrar)
-      @parser.registrar.id.should           == nil
       @parser.registrar.name.should         == "Tucows"
-      @parser.registrar.organization.should == "Tucows, Inc."
-      @parser.registrar.url.should          == "http://tucowsdomains.com"
+      @parser.registrar.organization.should == "Tucows"
+      @parser.registrar.url.should          == "http://www.tucows.com/"
     end
   end
   describe "#registrant_contacts" do
@@ -69,14 +68,13 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       @parser.registrant_contacts.should have(1).items
       @parser.registrant_contacts[0].should be_a(Whois::Record::Contact)
       @parser.registrant_contacts[0].type.should         == Whois::Record::Contact::TYPE_REGISTRANT
-      @parser.registrant_contacts[0].id.should           == nil
-      @parser.registrant_contacts[0].name.should         == nil
-      @parser.registrant_contacts[0].organization.should == "Tucows.com Co"
-      @parser.registrant_contacts[0].address.should      == "96 Mowat Avenue"
-      @parser.registrant_contacts[0].city.should         == "Toronto"
-      @parser.registrant_contacts[0].zip.should          == "M6K3M1"
-      @parser.registrant_contacts[0].state.should        == "Ontario"
-      @parser.registrant_contacts[0].country_code.should == "CA"
+      @parser.registrant_contacts[0].name.should         == "Wadadiah"
+      @parser.registrant_contacts[0].organization.should == nil
+      @parser.registrant_contacts[0].address.should      == "1-183 Carroll Street"
+      @parser.registrant_contacts[0].city.should         == "Dunedin"
+      @parser.registrant_contacts[0].zip.should          == "9001"
+      @parser.registrant_contacts[0].state.should        == ""
+      @parser.registrant_contacts[0].country_code.should == "NZ"
       @parser.registrant_contacts[0].phone.should        == nil
       @parser.registrant_contacts[0].fax.should          == nil
       @parser.registrant_contacts[0].email.should        == nil
@@ -88,17 +86,16 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       @parser.admin_contacts.should have(1).items
       @parser.admin_contacts[0].should be_a(Whois::Record::Contact)
       @parser.admin_contacts[0].type.should         == Whois::Record::Contact::TYPE_ADMIN
-      @parser.admin_contacts[0].id.should           == nil
-      @parser.admin_contacts[0].name.should         == "Administrator, DNS"
+      @parser.admin_contacts[0].name.should         == "Almahdi, Ahmad"
       @parser.admin_contacts[0].organization.should == nil
-      @parser.admin_contacts[0].address.should      == "96 Mowat Avenue"
-      @parser.admin_contacts[0].city.should         == "Toronto"
-      @parser.admin_contacts[0].zip.should          == "M6K3M1"
-      @parser.admin_contacts[0].state.should        == "Ontario"
-      @parser.admin_contacts[0].country_code.should == "CA"
-      @parser.admin_contacts[0].phone.should        == "+1.4165350123x0000"
+      @parser.admin_contacts[0].address.should      == "1-183 Carroll Street"
+      @parser.admin_contacts[0].city.should         == "Dunedin"
+      @parser.admin_contacts[0].zip.should          == "9001"
+      @parser.admin_contacts[0].state.should        == ""
+      @parser.admin_contacts[0].country_code.should == "NZ"
+      @parser.admin_contacts[0].phone.should        == "+1.6434701257"
       @parser.admin_contacts[0].fax.should          == nil
-      @parser.admin_contacts[0].email.should        == "dnsadmin@tucows.com"
+      @parser.admin_contacts[0].email.should        == "alatol@yahoo.com"
     end
   end
   describe "#technical_contacts" do
@@ -107,32 +104,26 @@ describe Whois::Record::Parser::WhoisTucowsCom, "status_registered.expected" do
       @parser.technical_contacts.should have(1).items
       @parser.technical_contacts[0].should be_a(Whois::Record::Contact)
       @parser.technical_contacts[0].type.should         == Whois::Record::Contact::TYPE_TECHNICAL
-      @parser.technical_contacts[0].id.should           == nil
-      @parser.technical_contacts[0].name.should         == "Administrator, DNS"
+      @parser.technical_contacts[0].name.should         == "Almahdi, Ahmad"
       @parser.technical_contacts[0].organization.should == nil
-      @parser.technical_contacts[0].address.should      == "96 Mowat Avenue"
-      @parser.technical_contacts[0].city.should         == "Toronto"
-      @parser.technical_contacts[0].zip.should          == "M6K3M1"
-      @parser.technical_contacts[0].state.should        == "Ontario"
-      @parser.technical_contacts[0].country_code.should == "CA"
-      @parser.technical_contacts[0].phone.should        == "+1.4165350123x0000"
+      @parser.technical_contacts[0].address.should      == "1-183 Carroll Street"
+      @parser.technical_contacts[0].city.should         == "Dunedin"
+      @parser.technical_contacts[0].zip.should          == "9001"
+      @parser.technical_contacts[0].state.should        == ""
+      @parser.technical_contacts[0].country_code.should == "NZ"
+      @parser.technical_contacts[0].phone.should        == "+1.6434701257"
       @parser.technical_contacts[0].fax.should          == nil
-      @parser.technical_contacts[0].email.should        == "dnsadmin@tucows.com"
+      @parser.technical_contacts[0].email.should        == "alatol@yahoo.com"
     end
   end
   describe "#nameservers" do
     it do
       @parser.nameservers.should be_a(Array)
-      @parser.nameservers.should have(3).items
+      @parser.nameservers.should have(2).items
       @parser.nameservers[0].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[0].name.should == "ns3.tucows.com"
-      @parser.nameservers[0].ipv4.should == "64.99.96.32"
+      @parser.nameservers[0].name.should == "ns5.ixwebhosting.com"
       @parser.nameservers[1].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[1].name.should == "ns1.tucows.com"
-      @parser.nameservers[1].ipv4.should == "216.40.47.20"
-      @parser.nameservers[2].should be_a(Whois::Record::Nameserver)
-      @parser.nameservers[2].name.should == "ns2.tucows.com"
-      @parser.nameservers[2].ipv4.should == "64.98.148.15"
+      @parser.nameservers[1].name.should == "ns6.ixwebhosting.com"
     end
   end
 end

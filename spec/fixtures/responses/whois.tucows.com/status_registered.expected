@@ -1,5 +1,5 @@
 #status
-  should: %s == :registered
+  should: %s raise_error(Whois::PropertyNotSupported)
 
 #available?
   should: %s == false
@@ -10,37 +10,35 @@
 
 #created_on
   should: %s CLASS(time)
-  should: %s == Time.parse("1995-09-07")
+  should: %s == Time.parse("2006-03-06")
 
 #updated_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2011-08-07")
+  should: %s == Time.parse("2012-03-19")
 
 #expires_on
   should: %s CLASS(time)
-  should: %s == Time.parse("2012-09-06")
+  should: %s == Time.parse("2013-03-06")
 
 
 #registrar
   should: %s CLASS(registrar)
-  should: %s.id           == nil
   should: %s.name         == "Tucows"
-  should: %s.organization == "Tucows, Inc."
-  should: %s.url          == "http://tucowsdomains.com"
+  should: %s.organization == "Tucows"
+  should: %s.url          == "http://www.tucows.com/"
 
 #registrant_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
-  should: %s[0].id           == nil
-  should: %s[0].name         == nil
-  should: %s[0].organization == "Tucows.com Co"
-  should: %s[0].address      == "96 Mowat Avenue"
-  should: %s[0].city         == "Toronto"
-  should: %s[0].zip          == "M6K3M1"
-  should: %s[0].state        == "Ontario"
-  should: %s[0].country_code == "CA"
+  should: %s[0].name         == "Wadadiah"
+  should: %s[0].organization == nil
+  should: %s[0].address      == "1-183 Carroll Street"
+  should: %s[0].city         == "Dunedin"
+  should: %s[0].zip          == "9001"
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "NZ"
   should: %s[0].phone        == nil
   should: %s[0].fax          == nil
   should: %s[0].email        == nil
@@ -50,45 +48,38 @@
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
-  should: %s[0].id           == nil
-  should: %s[0].name         == "Administrator, DNS"
+  should: %s[0].name         == "Almahdi, Ahmad"
   should: %s[0].organization == nil
-  should: %s[0].address      == "96 Mowat Avenue"
-  should: %s[0].city         == "Toronto"
-  should: %s[0].zip          == "M6K3M1"
-  should: %s[0].state        == "Ontario"
-  should: %s[0].country_code == "CA"
-  should: %s[0].phone        == "+1.4165350123x0000"
+  should: %s[0].address      == "1-183 Carroll Street"
+  should: %s[0].city         == "Dunedin"
+  should: %s[0].zip          == "9001"
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "NZ"
+  should: %s[0].phone        == "+1.6434701257"
   should: %s[0].fax          == nil
-  should: %s[0].email        == "dnsadmin@tucows.com"
+  should: %s[0].email        == "alatol@yahoo.com"
 
 #technical_contacts
   should: %s CLASS(array)
   should: %s SIZE(1)
   should: %s[0] CLASS(contact)
   should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
-  should: %s[0].id           == nil
-  should: %s[0].name         == "Administrator, DNS"
+  should: %s[0].name         == "Almahdi, Ahmad"
   should: %s[0].organization == nil
-  should: %s[0].address      == "96 Mowat Avenue"
-  should: %s[0].city         == "Toronto"
-  should: %s[0].zip          == "M6K3M1"
-  should: %s[0].state        == "Ontario"
-  should: %s[0].country_code == "CA"
-  should: %s[0].phone        == "+1.4165350123x0000"
+  should: %s[0].address      == "1-183 Carroll Street"
+  should: %s[0].city         == "Dunedin"
+  should: %s[0].zip          == "9001"
+  should: %s[0].state        == ""
+  should: %s[0].country_code == "NZ"
+  should: %s[0].phone        == "+1.6434701257"
   should: %s[0].fax          == nil
-  should: %s[0].email        == "dnsadmin@tucows.com"
+  should: %s[0].email        == "alatol@yahoo.com"
 
 
 #nameservers
   should: %s CLASS(array)
-  should: %s SIZE(3)
+  should: %s SIZE(2)
   should: %s[0] CLASS(nameserver)
-  should: %s[0].name == "ns3.tucows.com"
-  should: %s[0].ipv4 == "64.99.96.32"
+  should: %s[0].name == "ns5.ixwebhosting.com"
   should: %s[1] CLASS(nameserver)
-  should: %s[1].name == "ns1.tucows.com"
-  should: %s[1].ipv4 == "216.40.47.20"
-  should: %s[2] CLASS(nameserver)
-  should: %s[2].name == "ns2.tucows.com"
-  should: %s[2].ipv4 == "64.98.148.15"
+  should: %s[1].name == "ns6.ixwebhosting.com"

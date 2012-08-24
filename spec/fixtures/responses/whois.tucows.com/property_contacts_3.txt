@@ -1,51 +1,54 @@
 Registrant:
- Wadadiah
- 1-183 Carroll Street
- Dunedin,  9001
- NZ
+ Daniel Austin
+ 3 Gunnery Terrace
+ Milverton
+ Leamington Spa, Warwickshire CV32 5PE
+ UK
 
- Domain name: SS-NZ.COM
+ Domain name: SMARTPHRASE.COM
 
 
  Administrative Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Austin, Daniel  123reg@danielaustin.co.uk
+    3 Gunnery Terrace
+    Milverton
+    Leamington Spa, Warwickshire CV32 5PE
+    UK
+    01926 778794
  Technical Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Ltd, Webfusion  services@123-reg.co.uk
+    5 Roundwood Avenue
+    Stockley Park
+    Uxbridge, Middlesex UB11 1FF
+    GB
+    +44.8712309525    Fax: +44.8701650437
+
 
 
  Registration Service Provider:
-    Ecommerce, Inc., registrars@ecommerce.com
-    800-861-9394
-    http://ecommerce.com
-    UNLIMITED Storage Space, Monthly Transfer, and up-to 15 domains,
-    starting at $3.95!
-    
-    FREE DOMAIN REGISTRATIONS WITH EVERY HOSTING ACCOUNT + FREE FEATURES
-    INCLUDED. ONLY AT ECOMMERCE.COM
+    123-reg.co.uk, services@123-reg.co.uk
+    0845 450 2310
+    08709126612 (fax)
+    http://www.123-reg.co.uk
+    This company may be contacted for domain login/passwords,
+    DNS/Nameserver changes, and general domain support questions.
 
 
  Registrar of Record: TUCOWS, INC.
- Record last updated on 19-Mar-2012.
- Record expires on 06-Mar-2013.
- Record created on 06-Mar-2006.
+ Record last updated on 30-Sep-2011.
+ Record expires on 02-Dec-2014.
+ Record created on 02-Dec-1999.
 
  Registrar Domain Name Help Center:
     http://tucowsdomains.com
 
  Domain servers in listed order:
-    NS5.IXWEBHOSTING.COM   
-    NS6.IXWEBHOSTING.COM   
+    NS5.ESOSOFT.NET   
+    NS6.ESOSOFT.NET   
 
 
- Domain status: clientTransferProhibited
+ Domain status: clientDeleteProhibited
+                clientTransferProhibited
                 clientUpdateProhibited
 
 The Data in the Tucows Registrar WHOIS database is provided to you by Tucows

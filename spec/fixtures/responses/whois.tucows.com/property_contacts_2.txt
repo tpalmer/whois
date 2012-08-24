@@ -1,48 +1,46 @@
 Registrant:
- Wadadiah
- 1-183 Carroll Street
- Dunedin,  9001
- NZ
+ VistaPrint Technologies Ltd
+ Canon's Court
+ 22 Victoria Street
+ Hamilton,  HM12
+ BM
 
- Domain name: SS-NZ.COM
+ Domain name: LEDVERLICHTINGSOEST.COM
 
 
  Administrative Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Administrator, Domain  csadmin@vistaprint.com
+    95 Hayden Avenue
+    Lexington, MA 02421
+    US
+    +1.7816526199    Fax: +1.7816526096
+
  Technical Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Administrator, Domain  csadmin@vistaprint.com
+    95 Hayden Ave.
+    Lexington, MA 02421
+    US
+    +1.7816526199    Fax: +1.7816526096
+
 
 
  Registration Service Provider:
-    Ecommerce, Inc., registrars@ecommerce.com
-    800-861-9394
-    http://ecommerce.com
-    UNLIMITED Storage Space, Monthly Transfer, and up-to 15 domains,
-    starting at $3.95!
-    
-    FREE DOMAIN REGISTRATIONS WITH EVERY HOSTING ACCOUNT + FREE FEATURES
-    INCLUDED. ONLY AT ECOMMERCE.COM
+    Vistaprint, csadmin@vistaprint.com
+    866-811-1674
+
 
 
  Registrar of Record: TUCOWS, INC.
- Record last updated on 19-Mar-2012.
- Record expires on 06-Mar-2013.
- Record created on 06-Mar-2006.
+ Record last updated on 05-Jun-2012.
+ Record expires on 19-Jun-2013.
+ Record created on 19-Jun-2008.
 
  Registrar Domain Name Help Center:
     http://tucowsdomains.com
 
  Domain servers in listed order:
-    NS5.IXWEBHOSTING.COM   
-    NS6.IXWEBHOSTING.COM   
+    NS4.VPWEB.COM   
+    NS3.VPWEB.COM   
 
 
  Domain status: clientTransferProhibited

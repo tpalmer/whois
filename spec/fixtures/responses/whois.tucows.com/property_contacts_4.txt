@@ -1,48 +1,48 @@
 Registrant:
- Wadadiah
- 1-183 Carroll Street
- Dunedin,  9001
- NZ
+ The Eye Center
+ 594 E. Millsap
+ Fayetteville, AR 72703
+ US
 
- Domain name: SS-NZ.COM
+ Domain name: SEE2020NOW.COM
 
 
  Administrative Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Thomas, Jennifer  jthomas@see2020now.net
+    594 E. Millsap
+    Fayetteville, AR 72703
+    US
+    479-442-2020
  Technical Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Hostmaster, Contact  hostmaster@gcmcomputers.com
+    101 W. Mountain St.
+    Suite 101
+    Fayetteville, AR 72701
+    US
+    479-521-3100    Fax: 479-521-3188
+
 
 
  Registration Service Provider:
-    Ecommerce, Inc., registrars@ecommerce.com
-    800-861-9394
-    http://ecommerce.com
-    UNLIMITED Storage Space, Monthly Transfer, and up-to 15 domains,
-    starting at $3.95!
-    
-    FREE DOMAIN REGISTRATIONS WITH EVERY HOSTING ACCOUNT + FREE FEATURES
-    INCLUDED. ONLY AT ECOMMERCE.COM
+    GCM Computers, Inc., hostmaster@gcmcomputers.com
+    479-521-3100
+    479-521-3188 (fax)
+    http://www.gcmcomputers.com
+
 
 
  Registrar of Record: TUCOWS, INC.
- Record last updated on 19-Mar-2012.
- Record expires on 06-Mar-2013.
- Record created on 06-Mar-2006.
+ Record last updated on 09-Nov-2011.
+ Record expires on 06-Feb-2014.
+ Record created on 06-Feb-2002.
 
  Registrar Domain Name Help Center:
     http://tucowsdomains.com
 
  Domain servers in listed order:
-    NS5.IXWEBHOSTING.COM   
-    NS6.IXWEBHOSTING.COM   
+    NS2.GCMCOMPUTERS.COM   
+    NS3.GCMCOMPUTERS.COM   
+    NS1.GCMCOMPUTERS.COM   
 
 
  Domain status: clientTransferProhibited

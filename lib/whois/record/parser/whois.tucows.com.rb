@@ -6,59 +6,61 @@
 # Copyright (c) 2009-2012 Simone Carletti <weppos@weppos.net>
 #++
 
+
 require 'whois/record/parser/base'
+
 
 module Whois
   class Record
     class Parser
+
       # Parser for the whois.tucows.com server.
       #
       # @see Whois::Record::Parser::Example
       #   The Example parser for the list of all available methods.
-      #
-      # @author Justin Campbell <justin@cramerdev.me>
-      #
       class WhoisTucowsCom < Base
-        property_supported :status do
-          content_for_scanner =~ /Can't get information on non-local domain / ? :available : :registered
-        end
 
+        property_not_supported :status
+
+        # The server is contacted only in case of a registered domain.
         property_supported :available? do
-          status == :available
+          false
         end
 
         property_supported :registered? do
           !available?
         end
 
+
         property_supported :created_on do
-          if content_for_scanner =~ /Record created on\s+(.+)$/
+          if content_for_scanner =~ /Record created on (.+)\.\n/
             Time.parse($1)
           end
         end
 
         property_supported :updated_on do
-          if content_for_scanner =~ /Record last updated on\s+(.+)$/
+          if content_for_scanner =~ /Record last updated on (.+)\.\n/
             Time.parse($1)
           end
         end
 
         property_supported :expires_on do
-          if content_for_scanner =~ /Record expires on\s+(.+)$/
+          if content_for_scanner =~ /Record expires on (.+)\.\n/
             Time.parse($1)
           end
         end
 
+
         property_supported :registrar do
           Record::Registrar.new(
-            :name => "Tucows",
-            :organization => "Tucows, Inc.",
-            :url  => "http://tucowsdomains.com"
+              :name         => 'Tucows',
+              :organization => 'Tucows',
+              :url          => 'http://www.tucows.com/'
           )
         end
 
         property_supported :registrant_contacts do
-          build_contact('Registrant', Record::Contact::TYPE_REGISTRANT)
+          build_contact('Registrant:', Record::Contact::TYPE_REGISTRANT)
         end
 
         property_supported :admin_contacts do
@@ -69,72 +71,61 @@ module Whois
           build_contact('Technical Contact', Record::Contact::TYPE_TECHNICAL)
         end
 
+
         property_supported :nameservers do
-          if content_for_scanner =~ /Domain servers in listed order:\n((?:[^\n]+\n)+)/
+         if content_for_scanner =~ /Domain servers in listed order:\n((.+\n)+)\n/
             $1.split("\n").map do |line|
-              name, ipv4 = line.strip.split(" ")
-              Record::Nameserver.new(:name => name.downcase, :ipv4 => ipv4)
+              Record::Nameserver.new(:name => line.strip.downcase)
             end
           end
         end
 
-        private
+
+      private
 
         def build_contact(element, type)
-          # Registrant:
-          #  Tucows.com Co
-          #  96 Mowat Avenue
-          #  Toronto, Ontario M6K3M1
-          #  CA
-          #
-          #  Domain name: TUCOWS.COM
-          #
-          #
-          #  Administrative Contact:
-          #     Administrator, DNS  dnsadmin@tucows.com
-          #     96 Mowat Avenue
-          #     Toronto, Ontario M6K3M1
-          #     CA
-          #     +1.4165350123x0000
-          #  Technical Contact:
-          #     Administrator, DNS  dnsadmin@tucows.com
-          #     96 Mowat Avenue
-          #     Toronto, Ontario M6K3M1
-          #     CA
-          #     +1.4165350123x0000
-          #
-          #
-          #  Registration Service Provider:
-          #     Tucows.com Co., tucowsdomains@tucows.com
-          #     416-535-0123
-
-          content_match = content_for_scanner.match(/#{element}\:\n((\s+.*){4,5})/)
-          return unless content_match
-          contact = content_match[1]
-          return unless contact
-
-          contact = contact.lines.map(&:strip).join("\n")
-
-          match = contact.match(/
-            (
-              ((?<name>.+)\ {2}(?<email>.+@.+))|
-              (?<organization>.+)
-            )\n
-            (?<address>(.|\n)+)\n
-            (?<city>.+),\s(?<state>.+)\ (?<zip>.+)\n
-            (?<country_code>.+)\n?
-            (?<phone>.+)?\n?
-          /x)
-
+          indent = type == Record::Contact::TYPE_REGISTRANT ? 1 : 4
+          match  = content_for_scanner.slice(/#{element}.*\n((#{' ' * indent}.+\n)+)/, 1)
           return unless match
 
-          attributes = { :type => type }
+          # 0 Almahdi, Ahmad  alatol@yahoo.com
+          # 1 1-183 Carroll Street
+          # 2 Dunedin,  9001
+          # 3 NZ
+          # 4 +1.6434701257
 
-          match.names.each do |name|
-            attributes[name.to_sym] = match[name]
+          lines = $1.split("\n")
+          items = lines.dup
+
+          name, email = if items[0].index('@')
+            items.delete_at(0).scan(/(.+)  (.*)/).first.map(&:strip)
+          else
+            items.delete_at(0).strip
           end
 
-          Record::Contact.new attributes
+          phone, fax = if items[-1] =~ /^\s+\+?\d+/
+            items.delete_at(-1).match(/\s+(.+?)\s*(?:Fax: (.+))?$/).to_a[1,2]
+          end
+
+          country = items.delete_at(-1).strip
+
+          city, state, zip = items.delete_at(-1).scan(/(.+?), ([^\s]*?) (.+)/).first.map(&:strip)
+
+          address = items.map(&:strip).join("\n")
+
+          Record::Contact.new(
+            :type         => type,
+            :name         => name,
+            :organization => nil,
+            :address      => address,
+            :city         => city,
+            :state        => state,
+            :zip          => zip,
+            :country_code => country,
+            :email        => email,
+            :phone        => phone,
+            :fax          => fax
+          )
         end
       end
     end

@@ -1,52 +1,51 @@
 Registrant:
- Wadadiah
- 1-183 Carroll Street
- Dunedin,  9001
- NZ
+ Contact Privacy Inc. Customer 0129153591
+ 96 Mowat Ave
+ Toronto, ON M6K 3M1
+ CA
 
- Domain name: SS-NZ.COM
+ Domain name: HAIRLOSSTALK.COM
 
 
  Administrative Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Contact Privacy Inc. Customer 0129153591,   hairlosstalk.com@contactprivacy.com
+    96 Mowat Ave
+    Toronto, ON M6K 3M1
+    CA
+    +1.4165385457
  Technical Contact:
-    Almahdi, Ahmad  alatol@yahoo.com
-    1-183 Carroll Street
-    Dunedin,  9001
-    NZ
-    +1.6434701257
+    Contact Privacy Inc. Customer 0129153591,   hairlosstalk.com@contactprivacy.com
+    96 Mowat Ave
+    Toronto, ON M6K 3M1
+    CA
+    +1.4165385457
 
 
  Registration Service Provider:
-    Ecommerce, Inc., registrars@ecommerce.com
-    800-861-9394
-    http://ecommerce.com
-    UNLIMITED Storage Space, Monthly Transfer, and up-to 15 domains,
-    starting at $3.95!
-    
-    FREE DOMAIN REGISTRATIONS WITH EVERY HOSTING ACCOUNT + FREE FEATURES
-    INCLUDED. ONLY AT ECOMMERCE.COM
+    Hover, help@hover.com
+    416.538.5498
+    http://help.hover.com
+
 
 
  Registrar of Record: TUCOWS, INC.
- Record last updated on 19-Mar-2012.
- Record expires on 06-Mar-2013.
- Record created on 06-Mar-2006.
+ Record last updated on 15-Jul-2012.
+ Record expires on 01-Oct-2021.
+ Record created on 01-Oct-1999.
 
  Registrar Domain Name Help Center:
     http://tucowsdomains.com
 
  Domain servers in listed order:
-    NS5.IXWEBHOSTING.COM   
-    NS6.IXWEBHOSTING.COM   
+    NS.RACKSPACE.COM   
+    NS2.RACKSPACE.COM   
 
 
  Domain status: clientTransferProhibited
                 clientUpdateProhibited
+
+
+This domain's privacy is protected by contactprivacy.com. To reach the domain contacts, please go to http://www.contactprivacy.com and follow the instructions.
 
 The Data in the Tucows Registrar WHOIS database is provided to you by Tucows
 for information purposes only, and may be used to assist you in obtaining
