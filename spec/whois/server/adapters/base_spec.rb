@@ -157,4 +157,38 @@ describe Whois::Server::Adapters::Base do
     end
   end
 
+  describe '#socket_factory' do
+    let(:options) { {} }
+
+    before(:each) do
+      TCPSocket.stubs(:new)
+      @base = klass.new(:tld, ".test", "whois.test", options)
+    end
+
+    context 'without a proxy' do
+      before(:each) do
+        TCPSocket.stubs(:new)
+      end
+
+      it 'should create a TCPSocket' do
+        TCPSocket.expects(:new)
+        @base.send(:socket_factory, 'localhost', 43)
+      end
+    end
+
+    context 'with a proxy' do
+      let(:options) { { :proxy => {} } }
+
+      before(:each) do
+        TCPSocket.any_instance.stubs(:initialize).returns(stub(:puts => nil))
+        Whois::TCPProxySocket.any_instance.stubs(:initialize).returns(stub(:tcp_socket => nil))
+      end
+
+      it 'should initialize a TCPProxySocket' do
+        Whois::TCPProxySocket.any_instance.expects(:initialize)
+        @base.send(:socket_factory, 'localhost', 43)
+      end
+    end
+  end
+
 end

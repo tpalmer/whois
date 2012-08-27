@@ -9,6 +9,7 @@
 
 require 'whois/record/part'
 require 'whois/record'
+require 'whois/tcp_proxy_socket'
 require 'socket'
 
 
@@ -190,13 +191,20 @@ module Whois
         #
         # @api private
         def ask_the_socket(query, *args)
-          client = TCPSocket.new(*args)
+          client = socket_factory(*args)
           client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
           client.read                     # but write/read is more symmetric than puts/read
         ensure                            # and I really want to use read instead of gets.
           client.close if client          # If != client something went wrong.
         end
 
+        # Choose the correct socket to use based on the options
+        #
+        # @api private
+        def socket_factory(*args)
+          options[:proxy] ? Whois::TCPProxySocket.new(*args, options[:proxy]).tcp_socket :
+                            TCPSocket.new(*args)
+        end
       end
 
     end
