@@ -211,7 +211,12 @@ module Whois
         #
         # @api private
         def strip_proxy_response(response)
-          options[:proxy] ? "\r\n" + response.split("\r\n").drop(1).join("\r\n") : response
+          if options[:proxy]
+            lines = response.split("\r\n").drop(1)
+            lines.drop_while {|i| i.empty? }.join("\r\n")
+          else
+            response
+          end
         end
       end
 
