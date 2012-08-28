@@ -189,6 +189,29 @@ describe Whois::Server::Adapters::Base do
         @base.send(:socket_factory, 'localhost', 43)
       end
     end
+
+    describe '#strip_proxy_response' do
+      let(:options) { {} }
+      let(:response) { "HTTP/1.0 200 Connection established\r\nhello" }
+
+      before(:each) do
+        @base = klass.new(:tld, ".test", "whois.test", options)
+      end
+
+      context 'with no proxy set' do
+        it 'should not modify the response' do
+          @base.send(:strip_proxy_response, response).should == response
+        end
+      end
+
+      context 'with a proxy set' do
+        let(:options) { { :proxy => {} } }
+
+        it 'should strip a response' do
+          @base.send(:strip_proxy_response, response).should == 'hello'
+        end
+      end
+    end
   end
 
 end

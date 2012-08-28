@@ -10,10 +10,15 @@ module Whois
       @port = args.shift
       @proxy_options = args.pop
       @tcp_socket = TCPSocket.new(@proxy_options[:host], @proxy_options[:port], *args)
-      http_connect.each {|line| @tcp_socket.puts line }
+      http_connect.each {|line| @tcp_socket.puts line; }
     end
 
     private
+
+    def basic_auth_header
+      "Proxy-Authorization: Basic " +
+        Base64.strict_encode64("#{@proxy_options[:user]}:#{@proxy_options[:pass]}")
+    end
 
     def http_connect
       [
@@ -21,11 +26,6 @@ module Whois
         basic_auth_header,
         ""
       ]
-    end
-
-    def basic_auth_header
-      "Proxy-Authorization: Basic " +
-        Base64.strict_encode64("#{@proxy_options[:user]}:#{@proxy_options[:pass]}")
     end
   end
 end
