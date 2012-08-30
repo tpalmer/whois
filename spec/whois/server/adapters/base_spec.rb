@@ -157,4 +157,61 @@ describe Whois::Server::Adapters::Base do
     end
   end
 
+  describe '#socket_factory' do
+    let(:options) { {} }
+
+    before(:each) do
+      TCPSocket.stubs(:new)
+      @base = klass.new(:tld, ".test", "whois.test", options)
+    end
+
+    context 'without a proxy' do
+      before(:each) do
+        TCPSocket.stubs(:new)
+      end
+
+      it 'should create a TCPSocket' do
+        TCPSocket.expects(:new)
+        @base.send(:socket_factory, 'localhost', 43)
+      end
+    end
+
+    context 'with a proxy' do
+      let(:options) { { :proxy => {} } }
+
+      before(:each) do
+        TCPSocket.any_instance.stubs(:initialize).returns(stub(:puts => nil))
+        Whois::TCPProxySocket.any_instance.stubs(:initialize).returns(stub(:tcp_socket => nil))
+      end
+
+      it 'should initialize a TCPProxySocket' do
+        Whois::TCPProxySocket.any_instance.expects(:initialize)
+        @base.send(:socket_factory, 'localhost', 43)
+      end
+    end
+
+    describe '#strip_proxy_response' do
+      let(:options) { {} }
+      let(:response) { "HTTP/1.0 200 Connection established\r\nhello" }
+
+      before(:each) do
+        @base = klass.new(:tld, ".test", "whois.test", options)
+      end
+
+      context 'with no proxy set' do
+        it 'should not modify the response' do
+          @base.send(:strip_proxy_response, response).should == response
+        end
+      end
+
+      context 'with a proxy set' do
+        let(:options) { { :proxy => {} } }
+
+        it 'should strip a response' do
+          @base.send(:strip_proxy_response, response).should == 'hello'
+        end
+      end
+    end
+  end
+
 end
