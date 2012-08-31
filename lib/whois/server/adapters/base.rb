@@ -194,7 +194,7 @@ module Whois
           client = socket_factory(*args)
           client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
                                           # but write/read is more symmetric than puts/read
-          client.read
+          client.read.lstrip
         ensure                            # and I really want to use read instead of gets.
           client.close if client          # If != client something went wrong.
         end
