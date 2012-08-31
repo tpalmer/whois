@@ -5,15 +5,16 @@ describe Whois::TCPProxySocket do
                           :pass => 'pass' } }
 
   before(:each) do
-    TCPSocket.stubs(:new).returns(stub(:puts => nil))
+    TCPSocket.stubs(:new).returns(stub(:puts => nil, :gets => nil))
   end
 
   describe '#http_connect' do
-    it 'should do an http connect to the proxy server' do
+    it 'should do an http 1.0 connect to the proxy server' do
       @socket = klass.new('127.0.0.1', 43, nil, nil, proxy_options)
       @socket.send(:http_connect).should == [
-        "CONNECT 127.0.0.1:43 HTTP/1.1",
+        "CONNECT 127.0.0.1:43 HTTP/1.0",
         "Proxy-Authorization: Basic dXNlcjpwYXNz",
+        "Connection: Keep-Alive",
         ""
       ]
     end

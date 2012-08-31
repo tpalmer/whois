@@ -16,7 +16,7 @@ module Whois
       end
 
       # Strip 'HTTP/1.0 200 Connection Established' response.
-      @tcp_socket.gets
+      tcp_socket.gets
     end
 
     private
