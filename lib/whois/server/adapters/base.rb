@@ -194,7 +194,7 @@ module Whois
           client = socket_factory(*args)
           client.write("#{query}\r\n")    # I could use put(foo) and forget the \n
                                           # but write/read is more symmetric than puts/read
-          strip_proxy_response(client.read) # remove the http part from the proxy response
+          client.read
         ensure                            # and I really want to use read instead of gets.
           client.close if client          # If != client something went wrong.
         end
@@ -205,18 +205,6 @@ module Whois
         def socket_factory(*args)
           options[:proxy] ? Whois::TCPProxySocket.new(*args, options[:proxy]).tcp_socket :
                             TCPSocket.new(*args)
-        end
-
-        # Strip the response from a proxy if we're using one
-        #
-        # @api private
-        def strip_proxy_response(response)
-          if options[:proxy]
-            lines = response.split("\r\n").drop(1)
-            lines.drop_while {|i| i.empty? }.join("\r\n")
-          else
-            response
-          end
         end
       end
 

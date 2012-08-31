@@ -14,6 +14,9 @@ module Whois
       http_connect.each do |line|
         tcp_socket.puts line
       end
+
+      # Strip 'HTTP/1.0 200 Connection Established' response.
+      tcp_socket.gets
     end
 
     private
@@ -28,8 +31,9 @@ module Whois
 
     def http_connect
       [
-        "CONNECT #{host}:#{port} HTTP/1.1",
+        "CONNECT #{self.host}:#{self.port} HTTP/1.0",
         basic_auth_header,
+        "Connection: Keep-Alive",
         ""
       ]
     end
