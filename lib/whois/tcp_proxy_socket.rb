@@ -31,7 +31,7 @@ module Whois
 
     def http_connect
       [
-        "CONNECT #{@host}:#{@port} HTTP/1.0",
+        "CONNECT #{self.host}:#{self.port} HTTP/1.0",
         basic_auth_header,
         "Connection: Keep-Alive",
         ""
