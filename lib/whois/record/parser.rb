@@ -303,7 +303,7 @@ module Whois
 
         # The property is not supported nor defined.
         else
-          raise PropertyNotAvailable, "Unable to find a parser for `#{method}'"
+          nil
         end
       end
 
