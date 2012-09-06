@@ -352,8 +352,15 @@ module Whois
       #
       def select_parser(property, status = :any)
         parsers.each do |parser|
-          return parser if parser.class.property_registered?(property, status)
+          if parser.class.property_registered?(property, status)
+
+            content = parser.send(property)
+            if content.to_s.present?
+              return parser
+            end
+          end
         end
+
         nil
       end
 
