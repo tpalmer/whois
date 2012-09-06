@@ -237,9 +237,9 @@ describe Whois::Record do
   end
 
   describe "property?" do
-    it "raises a PropertyNotAvailable when the property is supported and has no value" do
+    it "returns false when the property is supported and has no value" do
       r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      expect { r.status? }.to raise_error(Whois::PropertyNotAvailable)
+      r.status?.should be_false
     end
 
     it "returns true when the property is supported and has a value" do

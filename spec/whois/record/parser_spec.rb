@@ -109,11 +109,9 @@ describe Whois::Record::Parser do
       end.should raise_error(Whois::PropertyNotSupported)
     end
 
-    it "raises when parsers are undefined" do
-      lambda do
-        r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
-        klass.new(r).created_on
-      end.should raise_error(Whois::PropertyNotAvailable)
+    it "false when parsers are undefined" do
+      r = Whois::Record.new(nil, [Whois::Record::Part.new(:body => "", :host => "parser.undefined.test"), Whois::Record::Part.new(:body => "", :host => "parser.undefined.test")])
+      klass.new(r).created_on.should be_false
     end
 
     it "raises when zero parts" do
