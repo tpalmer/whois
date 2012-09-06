@@ -18,7 +18,7 @@ describe Whois::Record do
       lambda { klass.new(@server) }.should raise_error(ArgumentError)
       lambda { klass.new(@server, @parts) }.should_not raise_error
     end
-    
+
     it "sets server and parts from arguments" do
       instance = klass.new(@server, @parts)
       instance.server.should be(@server)
@@ -185,7 +185,7 @@ describe Whois::Record do
     end
 
     it "fetches all parser property" do
-      klass.new(nil, []).properties.keys.should =~ Whois::Record::Parser::PROPERTIES 
+      klass.new(nil, []).properties.keys.should =~ Whois::Record::Parser::PROPERTIES
     end
   end
 
@@ -237,12 +237,12 @@ describe Whois::Record do
   end
 
   describe "property?" do
-    it "returns true when the property is supported and has no value" do
+    it "raises a PropertyNotAvailable when the property is supported and has no value" do
       r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
-      r.status?.should == false
+      expect { r.status? }.to raise_error(Whois::PropertyNotAvailable)
     end
 
-    it "returns false when the property is supported and has q value" do
+    it "returns true when the property is supported and has a value" do
       r = klass.new(nil, [Whois::Record::Part.new(:body => "", :host => "whois.properties.test")])
       r.created_on?.should == true
     end
