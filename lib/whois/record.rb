@@ -32,6 +32,9 @@ module Whois
       @server = server
     end
 
+    def errors
+      { server: @server.errors }
+    end
 
     # Checks if this class respond to given method.
     #

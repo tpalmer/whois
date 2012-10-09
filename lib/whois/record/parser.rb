@@ -133,6 +133,7 @@ module Whois
       # @return [Whois::Record] The record referenced by this parser.
       attr_reader :record
 
+      attr_reader :errors
 
       # Initializes and return a new parser from +record+.
       #
@@ -140,6 +141,7 @@ module Whois
       #
       def initialize(record)
         @record = record
+        @errors = []
       end
 
       # Checks if this class respond to given method.
@@ -274,14 +276,18 @@ module Whois
       end
 
       def method_missing(method, *args, &block)
-        if PROPERTIES.include?(method)
-          self.class.define_missing_method(method)
-          send(method, *args, &block)
-        elsif METHODS.include?(method)
-          self.class.define_missing_method(method)
-          send(method, *args, &block)
-        else
-          super
+        begin
+          if PROPERTIES.include?(method)
+            self.class.define_missing_method(method)
+            send(method, *args, &block)
+          elsif METHODS.include?(method)
+            self.class.define_missing_method(method)
+            send(method, *args, &block)
+          else
+            super
+          end
+        rescue => e
+          @errors.push(e)
         end
       end
 

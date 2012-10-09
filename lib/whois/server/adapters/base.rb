@@ -43,6 +43,8 @@ module Whois
         # @return [Hash] Optional adapter properties.
         attr_reader :options
 
+        attr_reader :errors
+
         # Temporary internal response buffer.
         #
         # @api private
@@ -64,6 +66,7 @@ module Whois
           @allocation = allocation
           @host       = host
           @options    = options || {}
+          @errors     = []
         end
 
         # Checks self and other for equality.
@@ -113,7 +116,11 @@ module Whois
         #
         def query(string)
           buffer_start do |buffer|
-            request(string)
+            begin
+              request(string)
+            rescue => e
+              @errors.push(e)
+            end
             Whois::Record.new(self, buffer)
           end
         end
