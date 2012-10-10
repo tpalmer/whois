@@ -116,10 +116,14 @@ module Whois
         #
         def query(string)
           buffer_start do |buffer|
-            begin
+            if options[:fail_silently]
+              begin
+                request(string)
+              rescue => e
+                @errors.push(e)
+              end
+            else
               request(string)
-            rescue => e
-              @errors.push(e)
             end
             Whois::Record.new(self, buffer)
           end

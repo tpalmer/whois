@@ -33,7 +33,7 @@ module Whois
     end
 
     def errors
-      { server: @server.errors }
+      @server.errors
     end
 
     # Checks if this class respond to given method.

@@ -276,18 +276,14 @@ module Whois
       end
 
       def method_missing(method, *args, &block)
-        begin
-          if PROPERTIES.include?(method)
-            self.class.define_missing_method(method)
-            send(method, *args, &block)
-          elsif METHODS.include?(method)
-            self.class.define_missing_method(method)
-            send(method, *args, &block)
-          else
-            super
-          end
-        rescue => e
-          @errors.push(e)
+        if PROPERTIES.include?(method)
+          self.class.define_missing_method(method)
+          send(method, *args, &block)
+        elsif METHODS.include?(method)
+          self.class.define_missing_method(method)
+          send(method, *args, &block)
+        else
+          super
         end
       end
 
